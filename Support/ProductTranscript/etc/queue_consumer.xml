@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ProductTranscript Integration
+ *
+ * @category  Support
+ * @package   Support_ProductTranscript
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
+    <consumer name="support.queue.transcript"
+              queue="support.queue.transcript"
+              connection="db"
+              maxMessages="5000"
+              consumerInstance="Magento\Framework\MessageQueue\Consumer"
+              handler="Support\ProductTranscript\Model\Queue\Consumer::process"/>
+</config>

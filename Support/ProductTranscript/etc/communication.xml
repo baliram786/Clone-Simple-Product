@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ProductTranscript Integration
+ *
+ * @category  Support
+ * @package   Support_ProductTranscript
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+    <topic name="support.queue.transcript" request="string">
+        <handler name="processAddProductToQueue"  type="Support\ProductTranscript\Model\Queue\Consumer" method="process" />
+    </topic>
+</config>

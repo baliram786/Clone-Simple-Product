@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ProductTranscript Integration
+ *
+ * @category  Support
+ * @package   Support_ProductTranscript
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Support_ProductTranscript::product_transcript"
+             title="Product Transcript"
+             module="Support_ProductTranscript"
+             sortOrder="999"
+             action="producttranscript/transcript"
+             parent="Magento_Catalog::catalog"
+             resource="Support_ProductTranscript::product_transcript"/>
+    </menu>
+</config>

@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * ProductTranscript Integration
+ *
+ * @category  Support
+ * @package   Support_ProductTranscript
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">producttranscript_product_listing.producttranscript_product_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>producttranscript_product_columns</spinner>
+        <deps>
+            <dep>producttranscript_product_listing.producttranscript_product_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource component="Magento_Ui/js/grid/provider" name="producttranscript_product_listing_data_source">
+        <settings>
+            <filterUrlParams>
+                <param name="entity_id">*</param>
+            </filterUrlParams>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider class="Support\ProductTranscript\Ui\Component\Listing\DataProviders\ProductTranscript" name="producttranscript_product_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <columns name="producttranscript_product_columns">
+        <column name="entity_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Product Id</label>
+            </settings>
+        </column>
+        <column name="sku">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Sku</label>
+            </settings>
+        </column>
+        <column name="type_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Type</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Support\ProductTranscript\Ui\Component\Listing\Column\ProductTranscriptActions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>

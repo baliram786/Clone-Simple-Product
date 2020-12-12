@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ProductTranscript Integration
+ *
+ * @category  Support
+ * @package   Support_ProductTranscript
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="producttranscript" frontName="producttranscript">
+            <module name="Support_ProductTranscript" before="Magento_Backend"/>
+        </route>
+    </router>
+</config>
